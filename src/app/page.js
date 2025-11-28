@@ -4,7 +4,8 @@ import AboutSection from "./components/AboutSection";
 import ProjectsSection from "./components/ProjectsSection";
 import EmailSection from "./components/EmailSection";
 import Footer from "./components/Footer";
-import AchievementsSection from "./components/AchievementsSection";
+import CarouselCertification from "./components/AchievementsSection";
+import ExperiencesSection from "./components/Experiences";
 
 export default function Home() {
   return (
@@ -12,9 +13,10 @@ export default function Home() {
       <Navbar />
       <div className="container mt-24 mx-auto px-12 py-4">
         <HeroSection />
-        {/* <AchievementsSection /> */}
         <AboutSection />
+  <ExperiencesSection/>
         <ProjectsSection />
+     <CarouselCertification/>
         <EmailSection />
       </div>
       <Footer />

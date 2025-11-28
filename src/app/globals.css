@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
+
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
@@ -24,4 +25,27 @@ body {
       rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb));
+}
+
+@keyframes slideUpFade {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-slideUpFade {
+  animation: slideUpFade 420ms cubic-bezier(.2,.9,.3,1) both;
+}
+
+.timeline-icon {
+  transition: transform 220ms ease, box-shadow 220ms ease;
+}
+.timeline-icon:hover {
+  transform: scale(1.06);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+}
+
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-slideUpFade { animation: none !important; transform: none !important; }
+  .timeline-icon { transition: none !important; }
 }

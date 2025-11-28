@@ -3,55 +3,99 @@ import React, { useTransition, useState } from "react";
 import Image from "next/image";
 import TabButton from "./TabButton";
 
+import { FaHtml5, FaCss3Alt, FaJsSquare, FaReact, FaVuejs, FaLaravel, FaPython, FaNodeJs, FaGitAlt } from "react-icons/fa";
+import { SiNextdotjs, SiFlask, SiNestjs, SiDocker, SiGitlab } from "react-icons/si";
+
+const SkillsContent = () => (
+  <div className="grid grid-cols-2 sm:grid-cols-3 gap-6">
+    <div className="flex items-center space-x-2">
+      <FaHtml5 className="text-orange-600 text-3xl" />
+      <span>HTML5</span>
+    </div>
+    <div className="flex items-center space-x-2">
+      <FaCss3Alt className="text-blue-600 text-3xl" />
+      <span>CSS3</span>
+    </div>
+    <div className="flex items-center space-x-2">
+      <FaJsSquare className="text-yellow-400 text-3xl" />
+      <span>JavaScript</span>
+    </div>
+    <div className="flex items-center space-x-2">
+      <FaReact className="text-cyan-500 text-3xl" />
+      <span>React JS</span>
+    </div>
+    <div className="flex items-center space-x-2">
+      <FaVuejs className="text-green-500 text-3xl" />
+      <span>Vue JS</span>
+    </div>
+    <div className="flex items-center space-x-2">
+      <SiNextdotjs className="text-black text-3xl" />
+      <span>Next JS</span>
+    </div>
+    <div className="flex items-center space-x-2">
+      <FaLaravel className="text-red-600 text-3xl" />
+      <span>Laravel</span>
+    </div>
+    <div className="flex items-center space-x-2">
+      <SiFlask className="text-gray-600 text-3xl" />
+      <span>Flask</span>
+    </div>
+    <div className="flex items-center space-x-2">
+      <SiNestjs className="text-red-400 text-3xl" />
+      <span>Nest JS</span>
+    </div>
+    <div className="flex items-center space-x-2">
+      <FaGitAlt className="text-orange-500 text-3xl" />
+      <span>Git</span>
+    </div>
+    <div className="flex items-center space-x-2">
+      <SiGitlab className="text-orange-600 text-3xl" />
+      <span>GitLab</span>
+    </div>
+    <div className="flex items-center space-x-2">
+      <SiDocker className="text-blue-500 text-3xl" />
+      <span>Docker</span>
+    </div>
+  </div>
+);
+
 const TAB_DATA = [
   {
     title: "Skills",
     id: "skills",
-    content: (
-      <ul className="list-disc pl-2">
-        <li>HTML, CSS</li>
-        <li>Javscript</li>
-        <li>React JS</li>
-        <li>Vue JS</li>
-        <li>Next JS</li>
-        <li>Laravel</li>
-        <li>Flask</li>
-        <li> Nest JS</li>
-        <li>REST API</li>
-      </ul>
-    ),
+    content: <SkillsContent />,
   },
   {
     title: "Education",
     id: "education",
     content: (
-      <ul className="list-disc pl-2">
-        <li>
-          Epitech: The School of Excellence in Computer Science | Coding Academy
+      <ul className="list-none p-0">
+        <li className="flex items-center space-x-4 mb-4">
+          <Image
+            src="/images/epitech-logo.png"
+            alt="Epitech Logo"
+            className="w-12 h-12 object-contain"
+            width={1000}
+            height={1000}
+          />
+          <span>Epitech: The School of Excellence in Computer Science | Coding Academy</span>
         </li>
-        <li>
-          Institute for Training and Research in Computer Science (IFRI) -
-          University of Abomey-Calavi
+        <li className="flex items-center space-x-4">
+          <Image
+            src="/images/ifri-logo.png"
+            alt="IFRI Logo"
+            className="w-12 h-12 object-contain"
+            width={1000}
+            height={1000}
+          />
+          <span>
+            Institute for Training and Research in Computer Science (IFRI) - University of Abomey-Calavi
+          </span>
         </li>
       </ul>
     ),
   },
-  {
-    title: "Certifications",
-    id: "certifications",
-    content: (
-      <ul className="list-disc pl-2">
-        <li>Fullstack Coding Academy Certification Epitech Benin</li>
-        <li>
-          OpenClassroom – Introduction to Machine Learning, Python, AI, Python
-          Libraries for Data Science
-        </li>
-        <li>Sololearn – SQL, Beginner/Intermediate Python, Data Science</li>
-        <li>DataCamp – Introduction to Python, SQL</li>
-        <li>English Certification – Duolingo English Test (Score 110)</li>
-      </ul>
-    ),
-  },
+ 
 ];
 
 const AboutSection = () => {
@@ -66,7 +110,7 @@ const AboutSection = () => {
 
   return (
     <section className="text-white" id="about">
-      <div className="md:grid md:grid-cols-2 gap-8 items-center py-8 px-4 xl:gap-16 sm:py-16 xl:px-16 mt-[10%]">
+      <div className="md:grid md:grid-cols-2 gap-8 items-center py-8  xl:gap-16 sm:py-16  mt-[10%]">
         <Image src="/images/programmer.jpg" width={800} height={500} />
         <div className="mt-4 md:mt-0 text-left flex flex-col h-full">
           <h2 className="text-4xl font-bold text-white mb-4">About Me</h2>
@@ -83,23 +127,15 @@ const AboutSection = () => {
               selectTab={() => handleTabChange("skills")}
               active={tab === "skills"}
             >
-              {" "}
-              Skills{" "}
+              Skills
             </TabButton>
             <TabButton
               selectTab={() => handleTabChange("education")}
               active={tab === "education"}
             >
-              {" "}
-              Education{" "}
+              Education
             </TabButton>
-            <TabButton
-              selectTab={() => handleTabChange("certifications")}
-              active={tab === "certifications"}
-            >
-              {" "}
-              Certifications{" "}
-            </TabButton>
+           
           </div>
           <div className="mt-8">
             {TAB_DATA.find((t) => t.id === tab).content}

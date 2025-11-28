@@ -1,69 +1,181 @@
 "use client";
-import React from "react";
-import dynamic from "next/dynamic";
+import "react-responsive-carousel/lib/styles/carousel.min.css";
+import { Carousel } from "react-responsive-carousel";
+import Image from "next/image";
 
-const AnimatedNumbers = dynamic(
-  () => {
-    return import("react-animated-numbers");
-  },
-  { ssr: false }
-);
-
-const achievementsList = [
+const certifications = [
   {
-    metric: "Projects",
-    value: "100",
-    postfix: "+",
+    src: "/images/Certifications/Screenshot From 2025-11-28 14-52-43.png",
+    alt: "Certification 1",
   },
   {
-    prefix: "~",
-    metric: "Users",
-    value: "100,000",
+    src: "/images/Certifications/Screenshot From 2025-11-28 14-52-55.png",
+    alt: "Certification 2",
   },
   {
-    metric: "Awards",
-    value: "7",
+    src: "/images/Certifications/Screenshot From 2025-11-28 14-53-02.png",
+    alt: "Certification 3",
   },
   {
-    metric: "Years",
-    value: "5",
+    src: "/images/Certifications/Screenshot From 2025-11-28 14-53-07.png",
+    alt: "Certification 4",
+  },
+  {
+    src: "/images/Certifications/Screenshot From 2025-11-28 14-53-14.png",
+    alt: "Certification 5",
+  },
+  {
+    src: "/images/Certifications/Screenshot From 2025-11-28 14-53-20.png",
+    alt: "Certification 6",
+  },
+  {
+    src: "/images/Certifications/Screenshot From 2025-11-28 14-54-00.png",
+    alt: "Certification 7",
+  },
+  {
+    src: "/images/Certifications/Screenshot From 2025-11-28 14-55-35.png",
+    alt: "Certification 8",
+  },
+  {
+    src: "/images/Certifications/Screenshot From 2025-11-28 14-55-45.png",
+    alt: "Certification 9",
+  },
+  {
+    src: "/images/Certifications/Screenshot From 2025-11-28 14-55-52.png",
+    alt: "Certification 10",
+  },
+  {
+    src: "/images/Certifications/Screenshot From 2025-11-28 14-55-58.png",
+    alt: "Certification 11",
+  },
+  {
+    src: "/images/Certifications/Screenshot From 2025-11-28 14-56-03.png",
+    alt: "Certification 11",
+  },
+  {
+    src: "/images/Certifications/Screenshot From 2025-11-28 14-56-03.png",
+    alt: "Certification 12",
+  },
+  {
+    src: "/images/Certifications/Screenshot From 2025-11-28 14-56-10.png",
+    alt: "Certification 13",
+  },
+  {
+    src: "/images/Certifications/Screenshot From 2025-11-28 14-56-15.png",
+    alt: "Certification 14",
+  },
+  {
+    src: "/images/Certifications/Screenshot From 2025-11-28 14-56-21.png",
+    alt: "Certification 14",
+  },
+  {
+    src: "/images/Certifications/Screenshot From 2025-11-28 14-56-27.png",
+    alt: "Certification 15",
+  },
+  {
+    src: "/images/Certifications/Screenshot From 2025-11-28 14-56-32.png",
+    alt: "Certification 16",
+  },
+  {
+    src: "/images/Certifications/Screenshot From 2025-11-28 14-56-39.png",
+    alt: "Certification 17",
+  },
+  {
+    src: "/images/Certifications/Screenshot From 2025-11-28 14-56-45.png",
+    alt: "Certification 18",
+  },
+  {
+    src: "/images/Certifications/Screenshot From 2025-11-28 14-56-51.png",
+    alt: "Certification 19",
+  },
+  {
+    src: "/images/Certifications/Screenshot From 2025-11-28 14-56-57.png",
+    alt: "Certification 20",
+  },
+  {
+    src: "/images/Certifications/Screenshot From 2025-11-28 14-57-02.png",
+    alt: "Certification 21",
+  },
+  {
+    src: "/images/Certifications/Screenshot From 2025-11-28 14-57-08.png",
+    alt: "Certification 22",
+  },
+  {
+    src: "/images/Certifications/Screenshot From 2025-11-28 14-57-13.png",
+    alt: "Certification 23",
+  },
+  {
+    src: "/images/Certifications/Screenshot From 2025-11-28 14-58-13.png",
+    alt: "Certification 24",
+  },
+  {
+    src: "/images/Certifications/Screenshot From 2025-11-28 14-58-47.png",
+    alt: "Certification 25",
+  },
+  {
+    src: "/images/Certifications/Screenshot From 2025-11-28 14-59-10.png",
+    alt: "Certification 26",
+  },
+  {
+    src: "/images/Certifications/Screenshot From 2025-11-28 14-59-17.png",
+    alt: "Certification 27",
+  },
+  {
+    src: "/images/Certifications/Screenshot From 2025-11-28 14-59-33.png",
+    alt: "Certification 28",
+  },
+  {
+    src: "/images/Certifications/Screenshot From 2025-11-28 15-00-01.png",
+    alt: "Certification 29",
   },
 ];
 
-const AchievementsSection = () => {
+const CarouselCertification = () => {
   return (
-    <div className="py-8 px-4 xl:gap-16 sm:py-16 xl:px-16">
-      <div className="sm:border-[#33353F] sm:border rounded-md py-8 px-16 flex flex-col sm:flex-row items-center justify-between">
-        {achievementsList.map((achievement, index) => {
+    <section className=" mt-[5%] mb-[10%]" id="certifications">
+      <h2 className="text-center text-4xl font-bold text-white mt-4 mb-8 md:mb-12">
+        My Certifications
+      </h2>
+      <Carousel
+        showArrows={true}
+        showThumbs={false}
+        infiniteLoop={true}
+        autoPlay={true}
+        interval={3000}
+        transitionTime={500}
+        showStatus={false}
+        centerMode={true}
+        centerSlidePercentage={60}
+        renderItem={(item, options) => {
+          const isCenter = options.isSelected;
           return (
             <div
-              key={index}
-              className="flex flex-col items-center justify-center mx-4 my-4 sm:my-0"
+              className="relative"
+              style={{
+                transform: isCenter ? "scale(1)" : "scale(0.8)",
+                transition: "transform 0.5s ease-in-out",
+                opacity: isCenter ? 1 : 0.6,
+              }}
             >
-              <h2 className="text-white text-4xl font-bold flex flex-row">
-                {achievement.prefix}
-                <AnimatedNumbers
-                  includeComma
-                  animateToNumber={parseInt(achievement.value)}
-                  locale="en-US"
-                  className="text-white text-4xl font-bold"
-                  configs={(_, index) => {
-                    return {
-                      mass: 1,
-                      friction: 100,
-                      tensions: 140 * (index + 1),
-                    };
-                  }}
-                />
-                {achievement.postfix}
-              </h2>
-              <p className="text-[#ADB7BE] text-base">{achievement.metric}</p>
+              {item}
             </div>
           );
-        })}
-      </div>
-    </div>
+        }}
+      >
+        {certifications.map((cert, index) => (
+          <div key={index}>
+            <Image
+              src={cert.src}
+              alt={cert.alt}
+              width={400}
+              height={300}
+              className="shadow-lg"
+            />
+          </div>
+        ))}
+      </Carousel>
+    </section>
   );
 };
 
-export default AchievementsSection;
+export default CarouselCertification;
