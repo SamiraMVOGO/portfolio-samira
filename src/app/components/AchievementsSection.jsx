@@ -45,23 +45,20 @@ const certifications = [
     alt: "Certification 10",
   },
   {
-    src: "/images/Certifications/Screenshot From 2025-11-28 14-55-58.png",
+    src: "/images/Certifications/Screenshot From 2025-11-28 22-12-39.png",
     alt: "Certification 11",
   },
   {
-    src: "/images/Certifications/Screenshot From 2025-11-28 14-56-03.png",
+    src: "/images/Certifications/Screenshot From 2025-11-28 22-20-55.png",
     alt: "Certification 11",
   },
-  {
-    src: "/images/Certifications/Screenshot From 2025-11-28 14-56-03.png",
-    alt: "Certification 12",
-  },
+ 
   {
     src: "/images/Certifications/Screenshot From 2025-11-28 14-56-10.png",
     alt: "Certification 13",
   },
   {
-    src: "/images/Certifications/Screenshot From 2025-11-28 14-56-15.png",
+    src: "/images/Certifications/Screenshot From 2025-11-28 21-33-33.png",
     alt: "Certification 14",
   },
   {
@@ -101,7 +98,7 @@ const certifications = [
     alt: "Certification 22",
   },
   {
-    src: "/images/Certifications/Screenshot From 2025-11-28 14-57-13.png",
+    src: "/images/Certifications/Screenshot From 2025-11-28 22-10-12.png",
     alt: "Certification 23",
   },
   {
@@ -124,15 +121,23 @@ const certifications = [
     src: "/images/Certifications/Screenshot From 2025-11-28 14-59-33.png",
     alt: "Certification 28",
   },
+
   {
-    src: "/images/Certifications/Screenshot From 2025-11-28 15-00-01.png",
-    alt: "Certification 29",
+    src: "/images/Certifications/Screenshot From 2025-11-28 21-43-41.png",
+    alt: "Certification 28",
   },
+  
+   {
+    src: "/images/Certifications/Screenshot From 2025-11-28 22-31-13.png",
+    alt: "Certification 28",
+  },
+  
+ 
 ];
 
 const CarouselCertification = () => {
   return (
-    <section className=" mt-[5%] mb-[10%]" id="certifications">
+    <section className=" mt-[10%] mb-[10%]" id="certifications">
       <h2 className="text-center text-4xl font-bold text-white mt-4 mb-8 md:mb-12">
         My Certifications
       </h2>

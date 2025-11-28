@@ -47,8 +47,8 @@ const projectsData = [
     description: "Development of a patient data management platform for the nephrology department of a hospital center with Nextjs 14",
     image: "/images/projects/kidney-doc.png",
     tag: ["All", "Web"],
-    gitUrl: "https://kidney-doc-final.vercel.app/",
-    previewUrl: "https://github.com/samiramvo/KidneyDoc",
+    gitUrl: "https://github.com/samiramvo/KidneyDoc",
+    previewUrl: "https://kidney-doc-final.vercel.app/",
   },
   // {
   //   id: 5,

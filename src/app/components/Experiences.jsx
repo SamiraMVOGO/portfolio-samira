@@ -90,22 +90,27 @@ export default function ExperiencesSection({ cvPath = '/cv.pdf' }) {
           <ol className="relative">
             {experiences.map((exp, idx) => (
               <li key={idx} className="mb-10">
-                <div className='flex gap-2'>
+               <div className='flex justify-between'>
+                 <div className='flex gap-2'>
                   <span className="flex items-center justify-center w-6 h-6 bg-gray-300 rounded-full shadow timeline-icon">
                     <IconCompany />
                   </span>
-
-                  <div className="flex flex-col md:flex-row md:items-center md:justify-between">
-                    <h3 className="text-lg font-medium">
-                      {exp.role} <span className="text-gray-600 text-sm">— {exp.company}</span>
+                  <h3 className="text-lg font-medium">
+                      {exp.role} 
                     </h3>
-                    <time className="text-sm text-gray-600 mt-1 md:mt-0">{exp.period} · {exp.location}</time>
+</div>
+                  <div className="flex gap-2 flex-col md:flex-row md:items-center md:justify-between">
+                    <h3 className="text-lg font-medium">
+                       <span className="text-gray-600 text-sm"> {exp.company}</span>
+                    </h3>
+                    <time className="text-sm text-gray-600  md:mt-0">{exp.period} · {exp.location}</time>
                   </div>
-                </div>
+           
+               </div>
 
-                <ul className="mt-3 list-disc  text-[#ADB7BE]  space-y-1">
+                <div className="mt-3 list-disc  text-[#ADB7BE]  space-y-1">
                   {exp.bullets.map((b, i) => <div key={i}>{b}</div>)}
-                </ul>
+                </div>
               </li>
             ))}
           </ol>
