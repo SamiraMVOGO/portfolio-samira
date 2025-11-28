@@ -3,8 +3,8 @@ import React, { useTransition, useState } from "react";
 import Image from "next/image";
 import TabButton from "./TabButton";
 
-import { FaHtml5, FaCss3Alt, FaJsSquare, FaReact, FaVuejs, FaLaravel, FaPython, FaNodeJs, FaGitAlt } from "react-icons/fa";
-import { SiNextdotjs, SiFlask, SiNestjs, SiDocker, SiGitlab } from "react-icons/si";
+import { FaHtml5, FaCss3Alt, FaJsSquare, FaReact, FaVuejs, FaLaravel, FaPython, FaNodeJs, FaGitAlt, FaPhp } from "react-icons/fa";
+import { SiNextdotjs, SiFlask, SiNestjs, SiDocker, SiGitlab, SiTailwindcss } from "react-icons/si";
 
 const SkillsContent = () => (
   <div className="grid grid-cols-2 sm:grid-cols-3 gap-6">
@@ -19,6 +19,15 @@ const SkillsContent = () => (
     <div className="flex items-center space-x-2">
       <FaJsSquare className="text-yellow-400 text-3xl" />
       <span>JavaScript</span>
+    </div>
+    <div className="flex items-center space-x-2">
+      <FaPython className="text-blue-400 text-3xl" />
+      <span>Python</span>
+    </div>
+    
+    <div className="flex items-center space-x-2">
+      <FaPhp className="text-indigo-600 text-3xl" />
+      <span>PHP</span>
     </div>
     <div className="flex items-center space-x-2">
       <FaReact className="text-cyan-500 text-3xl" />
@@ -55,6 +64,10 @@ const SkillsContent = () => (
     <div className="flex items-center space-x-2">
       <SiDocker className="text-blue-500 text-3xl" />
       <span>Docker</span>
+    </div>
+     <div className="flex items-center space-x-2">
+      <SiTailwindcss className="text-teal-400 text-3xl" />
+      <span>Tailwind CSS</span>
     </div>
   </div>
 );
