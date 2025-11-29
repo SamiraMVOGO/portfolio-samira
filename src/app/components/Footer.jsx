@@ -1,11 +1,15 @@
+"use client";
 import React from "react";
+import { useTranslation } from "react-i18next";
 
 const Footer = () => {
+  const { t } = useTranslation();
+
   return (
     <footer className="footer border z-10 border-t-[#33353F] border-l-transparent border-r-transparent text-white">
       <div className="container p-12 flex justify-center items-center mx-auto">
        
-        <p className="text-slate-600">© 2025 - Samira MVOGO All rights reserved.</p>
+        <p className="text-slate-600">{t("footer.copyright")}</p>
       </div>
     </footer>
   );
