@@ -1,0 +1,25 @@
+{
+  "navbar": {
+    "title": "My Portfolio"
+  },
+  "about": {
+    "title": "About Me",
+    "description": "I am a full stack web developer with a passion for creating interactive and responsive web applications."
+  },
+  "tabs": {
+    "skills": "Skills",
+    "education": "Education"
+  },
+  "skills": {
+    "html": "HTML5",
+    "css": "CSS3",
+    "js": "JavaScript",
+    "python": "Python"
+  },
+  "education": {
+    "epitech": "Epitech: The School of Excellence in Computer Science | Coding Academy",
+    "epitechAlt": "Epitech Logo",
+    "ifri": "Institute for Training and Research in Computer Science (IFRI) - University of Abomey-Calavi",
+    "ifriAlt": "IFRI Logo"
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "navbar": {
+    "title": "Mon Portfolio"
+  },
+  "about": {
+    "title": "À propos de moi",
+    "description": "Je suis un développeur web full stack passionné par la création d'applications web interactives et réactives."
+  },
+  "tabs": {
+    "skills": "Compétences",
+    "education": "Éducation"
+  },
+  "skills": {
+    "html": "HTML5",
+    "css": "CSS3",
+    "js": "JavaScript",
+    "python": "Python"
+  },
+  "education": {
+    "epitech": "Epitech : L'école d'excellence en informatique | Coding Academy",
+    "epitechAlt": "Logo Epitech",
+    "ifri": "Institut de Formation et de Recherche en Informatique (IFRI) - Université d'Abomey-Calavi",
+    "ifriAlt": "Logo IFRI"
+  }
+}

@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import NavLink from "./NavLink";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/solid";
 import MenuOverlay from "./MenuOverlay";
+import { useTranslation } from "react-i18next";
 
 const navLinks = [
   {
@@ -30,6 +31,14 @@ const navLinks = [
 
 const Navbar = () => {
   const [navbarOpen, setNavbarOpen] = useState(false);
+  const { t, i18n } = useTranslation();
+  const [language, setLanguage] = useState(i18n.language || "en");
+
+  const toggleLanguage = () => {
+    const newLanguage = language === "en" ? "fr" : "en";
+    i18n.changeLanguage(newLanguage);
+    setLanguage(newLanguage);
+  };
 
   return (
     <nav className="fixed mx-auto border border-[#33353F] top-0 left-0 right-0 z-10 bg-[#121212] bg-opacity-100">
@@ -65,6 +74,11 @@ const Navbar = () => {
               </li>
             ))}
           </ul>
+        </div>
+        <div className="flex items-center space-x-4">
+          <button onClick={toggleLanguage} className="hover:underline">
+            {language === "en" ? "FR" : "EN"}
+          </button>
         </div>
       </div>
       {navbarOpen ? <MenuOverlay links={navLinks} /> : null}
