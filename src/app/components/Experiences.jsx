@@ -1,52 +1,6 @@
+"use client";
 import React from 'react'
-
-const experiences = [
-  {
-    company: 'Best Experts Group',
-    role: 'Flutter / Laravel Developer',
-    period: 'July 2025',
-    location: 'Cotonou, Benin',
-    bullets: [
-      'Developed a mobile application for tracking school activities, designed for teachers and parents.'
-    ]
-  },
-  {
-    company: 'TettriX',
-    role: 'Fullstack Vue.js / Laravel Developer',
-    period: 'Oct 2024 — Jan 2025',
-    location: 'Remote',
-    bullets: [
-      'Developed an innovative MVP in the healthcare domain using Vue.js and Laravel.'
-    ]
-  },
-  {
-    company: 'ByteInnovIT',
-    role: 'Lead Front‑End Developer',
-    period: 'July 2024 — Oct 2024',
-    location: 'Cotonou, Benin',
-    bullets: [
-      'Designed interfaces and integrated APIs for a SaaS suite (Next.js / Tailwind-like design).'
-    ]
-  },
-  {
-    company: 'Fictagroup',
-    role: 'React.js Developer Intern',
-    period: 'Apr 2024 — Aug 2024',
-    location: 'Remote',
-    bullets: [
-      'Developed a React project for a university and a company specializing in agriculture.'
-    ]
-  },
-  {
-    company: 'MIFY',
-    role: 'Analyst / Developer Intern',
-    period: 'Aug 2023 — Nov 2023',
-    location: 'Arconville, Benin',
-    bullets: [
-      'Analyzed patient data to improve a predictive model for chronic kidney diseases.'
-    ]
-  }
-]
+import { useTranslation } from 'react-i18next';
 
 function IconCompany() {
   return (
@@ -58,11 +12,51 @@ function IconCompany() {
 }
 
 export default function ExperiencesSection({ cvPath = '/cv.pdf' }) {
+  const { t } = useTranslation();
+
+  const experiences = [
+    {
+      company: 'Best Experts Group',
+      role: t("experiences.bestExperts.role"),
+      period: t("experiences.bestExperts.period"),
+      location: t("experiences.bestExperts.location"),
+      bullets: [t("experiences.bestExperts.description")]
+    },
+    {
+      company: 'TettriX',
+      role: t("experiences.tettrix.role"),
+      period: t("experiences.tettrix.period"),
+      location: t("experiences.tettrix.location"),
+      bullets: [t("experiences.tettrix.description")]
+    },
+    {
+      company: 'ByteInnovIT',
+      role: t("experiences.byteinnovit.role"),
+      period: t("experiences.byteinnovit.period"),
+      location: t("experiences.byteinnovit.location"),
+      bullets: [t("experiences.byteinnovit.description")]
+    },
+    {
+      company: 'Fictagroup',
+      role: t("experiences.fictagroup.role"),
+      period: t("experiences.fictagroup.period"),
+      location: t("experiences.fictagroup.location"),
+      bullets: [t("experiences.fictagroup.description")]
+    },
+    {
+      company: 'MIFY',
+      role: t("experiences.mify.role"),
+      period: t("experiences.mify.period"),
+      location: t("experiences.mify.location"),
+      bullets: [t("experiences.mify.description")]
+    }
+  ];
+
   return (
     <section className="mx-auto text-black mt-[5%] mb-[10%]" id="experiences">
       <header className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 mb-8">
         <div className='text-center'>
-          <h1 className="text-3xl font-semibold tracking-tight text-white">Professional Experiences</h1>
+          <h1 className="text-3xl font-semibold tracking-tight text-white">{t("experiences.title")}</h1>
         </div>
 
         <div className="flex items-center gap-3">
@@ -77,7 +71,7 @@ export default function ExperiencesSection({ cvPath = '/cv.pdf' }) {
                 <path d="M12 3v12" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
                 <path d="M8 7l4-4 4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
               </svg>
-              View / Download CV
+              {t("experiences.viewCV")}
             </span>
           </a>
 
@@ -118,8 +112,8 @@ export default function ExperiencesSection({ cvPath = '/cv.pdf' }) {
 
         <aside className="border rounded-lg p-4 bg-[#f5f5f5]">
           <div className="flex items-center justify-between mb-3">
-            <strong className="text-sm text-black">Resume Preview</strong>
-            <a href={cvPath} target="_blank" rel="noopener noreferrer" className="text-xs text-gray-600 hover:underline">Open</a>
+            <strong className="text-sm text-black">{t("experiences.resumePreview")}</strong>
+            <a href={cvPath} target="_blank" rel="noopener noreferrer" className="text-xs text-gray-600 hover:underline">{t("experiences.open")}</a>
           </div>
 
           <div className="h-[400px] overflow-hidden rounded-md border">

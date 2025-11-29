@@ -2,6 +2,7 @@
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from "react-responsive-carousel";
 import Image from "next/image";
+import { useTranslation } from "react-i18next";
 
 const certifications = [
   {
@@ -136,10 +137,12 @@ const certifications = [
 ];
 
 const CarouselCertification = () => {
+  const { t } = useTranslation();
+
   return (
     <section className=" mt-[10%] mb-[10%]" id="certifications">
       <h2 className="text-center text-4xl font-bold text-white mt-4 mb-8 md:mb-12">
-        My Certifications
+        {t("certifications.title")}
       </h2>
       <Carousel
         showArrows={true}

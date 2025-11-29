@@ -6,9 +6,11 @@ import Link from "next/link";
 import Image from "next/image";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { useTranslation } from "react-i18next";
 
 const EmailSection = () => {
-  const [loading, setLoading] = useState(false); 
+  const [loading, setLoading] = useState(false);
+  const { t } = useTranslation();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -36,7 +38,7 @@ const EmailSection = () => {
       const resData = await response.json();
 
       if (response.status === 200) {
-        toast.success("Email sent successfully!", {
+        toast.success(t("contact.successMessage"), {
           position: "top-right",
           autoClose: 3000,
           hideProgressBar: false,
@@ -47,7 +49,7 @@ const EmailSection = () => {
         });
         e.target.reset(); // Clear the form fields
       } else {
-        toast.error("Failed to send email. Please try again.", {
+        toast.error(t("contact.errorMessage"), {
           position: "top-right",
           autoClose: 3000,
           hideProgressBar: false,
@@ -58,7 +60,7 @@ const EmailSection = () => {
         });
       }
     } catch (error) {
-      toast.error("An error occurred. Please try again.", {
+      toast.error(t("contact.genericError"), {
         position: "top-right",
         autoClose: 3000,
         hideProgressBar: false,
@@ -80,13 +82,10 @@ const EmailSection = () => {
       <div className="bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-primary-900 to-transparent rounded-full h-80 w-80 z-0 blur-lg absolute top-3/4 -left-4 transform -translate-x-1/2 -translate-1/2"></div>
       <div className="z-10">
         <h5 className="text-xl font-bold text-white my-2">
-          Let&apos;s Connect
+          {t("contact.title")}
         </h5>
         <p className="text-[#ADB7BE] mb-4 max-w-md">
-          {" "}
-          I&apos;m currently looking for new opportunities, my inbox is always
-          open. Whether you have a question or just want to say hi, I&apos;ll
-          try my best to get back to you!
+          {t("contact.description")}
         </p>
         <div className="socials flex flex-row gap-2">
           <Link href="https://github.com/samiramvo">
@@ -104,7 +103,7 @@ const EmailSection = () => {
               htmlFor="email"
               className="text-white block mb-2 text-sm font-medium"
             >
-              Your email
+              {t("contact.emailLabel")}
             </label>
             <input
               name="email"
@@ -112,7 +111,7 @@ const EmailSection = () => {
               id="email"
               required
               className="bg-[#18191E] border outline-none border-[#33353F] placeholder-[#9CA2A9] text-gray-100 text-sm rounded-lg block w-full p-2.5"
-              placeholder="jacob@google.com"
+              placeholder={t("contact.emailPlaceholder")}
             />
           </div>
           <div className="mb-6">
@@ -120,7 +119,7 @@ const EmailSection = () => {
               htmlFor="subject"
               className="text-white block text-sm mb-2 font-medium"
             >
-              Subject
+              {t("contact.subjectLabel")}
             </label>
             <input
               name="subject"
@@ -128,7 +127,7 @@ const EmailSection = () => {
               id="subject"
               required
               className="bg-[#18191E] border outline-none border-[#33353F] placeholder-[#9CA2A9] text-gray-100 text-sm rounded-lg block w-full p-2.5"
-              placeholder="Just saying hi"
+              placeholder={t("contact.subjectPlaceholder")}
             />
           </div>
           <div className="mb-6">
@@ -136,14 +135,14 @@ const EmailSection = () => {
               htmlFor="message"
               className="text-white block text-sm mb-2 font-medium"
             >
-              Message
+              {t("contact.messageLabel")}
             </label>
             <textarea
               name="message"
               id="message"
               required
               className="bg-[#18191E] border outline-none border-[#33353F] placeholder-[#9CA2A9] text-gray-100 text-sm rounded-lg block w-full p-2.5"
-              placeholder="Let's talk about..."
+              placeholder={t("contact.messagePlaceholder")}
             />
           </div>
           <button
@@ -173,7 +172,7 @@ const EmailSection = () => {
                 ></path>
               </svg>
             ) : (
-              "Send Message"
+              t("contact.sendButton")
             )}
           </button>
         </form>

@@ -4,8 +4,12 @@ import Image from "next/image";
 import { TypeAnimation } from "react-type-animation";
 import { motion } from "framer-motion";
 import Link from "next/link";
+import { useTranslation } from "react-i18next";
 
 const HeroSection = () => {
+  const { t, i18n } = useTranslation();
+  const currentLang = i18n.language || "en";
+  
   return (
     <section className="lg:py-16">
       <div className="grid grid-cols-1 sm:grid-cols-12">
@@ -17,16 +21,17 @@ const HeroSection = () => {
         >
           <h1 className="text-white mb-4 text-4xl sm:text-5xl lg:text-5xl lg:leading-normal font-extrabold">
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-secondary-600">
-              Hello, I&apos;m{" "}
+              {t("hero.greeting")}{" "}
             </span>
             <br></br>
             <TypeAnimation
+              key={currentLang}
               sequence={[
                 "Samira",
                 3000,
-                "Web Developer",
+                t("hero.webDeveloper"),
                 3000,
-                "Mobile Developer",
+                t("hero.mobileDeveloper"),
                 3000,
               ]}
               wrapper="span"
@@ -35,15 +40,14 @@ const HeroSection = () => {
             />
           </h1>
           <p className="text-[#ADB7BE] text-base sm:text-lg mb-6 lg:text-xl">
-            I am passionate about creating innovative web and mobile solutions
-            that bring ideas to life.
+            {t("hero.description")}
           </p>
           <div>
             <Link
               href="/#contact"
               className="px-6 inline-block py-3 w-full sm:w-fit rounded-full mr-4 bg-gradient-to-br from-primary-500 to-secondary-500 hover:bg-slate-200 text-white"
             >
-              Let&apos;s Connect
+              {t("hero.connect")}
             </Link>
             <a
               href="/cv.pdf"
@@ -51,7 +55,7 @@ const HeroSection = () => {
               className="px-1 inline-block py-1 w-full sm:w-fit rounded-full bg-gradient-to-br from-primary-500 to-secondary-500 hover:bg-slate-800 text-white mt-3"
             >
               <span className="block bg-[#121212] hover:bg-slate-800 rounded-full px-5 py-2">
-                Download CV
+                {t("hero.downloadCV")}
               </span>
             </a>
           </div>

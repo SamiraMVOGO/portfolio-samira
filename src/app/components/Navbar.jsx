@@ -6,29 +6,6 @@ import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/solid";
 import MenuOverlay from "./MenuOverlay";
 import { useTranslation } from "react-i18next";
 
-const navLinks = [
-  {
-    title: "About",
-    path: "#about",
-  },
-  {
-    title: "Experiences",
-    path: "#experiences",
-  },
-  {
-    title: "Projects",
-    path: "#projects",
-  },
-   {
-    title: "Certifications",
-    path: "#certifications",
-  },
-  {
-    title: "Contact",
-    path: "#contact",
-  },
-];
-
 const Navbar = () => {
   const [navbarOpen, setNavbarOpen] = useState(false);
   const { t, i18n } = useTranslation();
@@ -39,6 +16,29 @@ const Navbar = () => {
     i18n.changeLanguage(newLanguage);
     setLanguage(newLanguage);
   };
+
+  const navLinks = [
+    {
+      title: t("navbar.about"),
+      path: "#about",
+    },
+    {
+      title: t("navbar.experiences"),
+      path: "#experiences",
+    },
+    {
+      title: t("navbar.projects"),
+      path: "#projects",
+    },
+    {
+      title: t("navbar.certifications"),
+      path: "#certifications",
+    },
+    {
+      title: t("navbar.contact"),
+      path: "#contact",
+    },
+  ];
 
   return (
     <nav className="fixed mx-auto border border-[#33353F] top-0 left-0 right-0 z-10 bg-[#121212] bg-opacity-100">
