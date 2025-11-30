@@ -259,7 +259,7 @@ const fr = {
     messageLabel: "Message",
     messagePlaceholder: "Parlons de...",
     sendButton: "Envoyer le message",
-    successMessage: "Email envoyé avec succès !",
+    successMessage: "Email send successfully!",
     errorMessage: "Échec de l'envoi de l'email. Veuillez réessayer.",
     genericError: "Une erreur s'est produite. Veuillez réessayer."
   },

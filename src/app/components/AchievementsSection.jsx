@@ -30,6 +30,23 @@ const certifications = [
     alt: "Certification 6",
   },
   {
+    src: "/images/Certifications/Screenshot From 2025-11-28 14-59-33.png",
+    alt: "Certification 28",
+  },
+
+  {
+    src: "/images/Certifications/Screenshot From 2025-11-30 10-37-23.png",
+    alt: "Certification 28",
+  },
+    {
+    src: "/images/Certifications/Screenshot From 2025-11-28 14-58-47.png",
+    alt: "Certification 25",
+  },
+   {
+    src: "/images/Certifications/Screenshot From 2025-11-30 10-37-46.png",
+    alt: "Certification 28",
+  },
+  {
     src: "/images/Certifications/Screenshot From 2025-11-28 14-54-00.png",
     alt: "Certification 7",
   },
@@ -106,10 +123,7 @@ const certifications = [
     src: "/images/Certifications/Screenshot From 2025-11-28 14-58-13.png",
     alt: "Certification 24",
   },
-  {
-    src: "/images/Certifications/Screenshot From 2025-11-28 14-58-47.png",
-    alt: "Certification 25",
-  },
+  
   {
     src: "/images/Certifications/Screenshot From 2025-11-28 14-59-10.png",
     alt: "Certification 26",
@@ -118,10 +132,7 @@ const certifications = [
     src: "/images/Certifications/Screenshot From 2025-11-28 14-59-17.png",
     alt: "Certification 27",
   },
-  {
-    src: "/images/Certifications/Screenshot From 2025-11-28 14-59-33.png",
-    alt: "Certification 28",
-  },
+  
 
   {
     src: "/images/Certifications/Screenshot From 2025-11-28 21-43-41.png",
@@ -132,7 +143,7 @@ const certifications = [
     src: "/images/Certifications/Screenshot From 2025-11-28 22-31-13.png",
     alt: "Certification 28",
   },
-  
+   
  
 ];
 
