@@ -1,10 +1,10 @@
 "use client";
 import Link from "next/link";
-import React, { useState } from "react";
+import React from "react";
 import NavLink from "./NavLink";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/solid";
 import MenuOverlay from "./MenuOverlay";
-import { useTranslation } from "react-i18next";
+import { useLanguage } from "./LanguageContext";
 
 const navLinks = [
   {
@@ -30,15 +30,8 @@ const navLinks = [
 ];
 
 const Navbar = () => {
-  const [navbarOpen, setNavbarOpen] = useState(false);
-  const { t, i18n } = useTranslation();
-  const [language, setLanguage] = useState(i18n.language || "en");
-
-  const toggleLanguage = () => {
-    const newLanguage = language === "en" ? "fr" : "en";
-    i18n.changeLanguage(newLanguage);
-    setLanguage(newLanguage);
-  };
+  const [navbarOpen, setNavbarOpen] = React.useState(false);
+  const { language, toggleLanguage } = useLanguage();
 
   return (
     <nav className="fixed mx-auto border border-[#33353F] top-0 left-0 right-0 z-10 bg-[#121212] bg-opacity-100">
@@ -75,10 +68,21 @@ const Navbar = () => {
             ))}
           </ul>
         </div>
-        <div className="flex items-center space-x-4">
-          <button onClick={toggleLanguage} className="hover:underline">
-            {language === "en" ? "FR" : "EN"}
+        <div className="flex items-center space-x-2">
+          <span className={`text-xs font-medium ${language === "en" ? "text-white" : "text-gray-500"}`}>EN</span>
+          <button
+            onClick={toggleLanguage}
+            className="relative inline-flex h-6 w-11 items-center rounded-full transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 focus:ring-offset-[#121212]"
+            style={{ backgroundColor: language === "en" ? "#6b21a8" : "#d946ef" }}
+            aria-label="Toggle language"
+          >
+            <span
+              className={`inline-block h-4 w-4 transform rounded-full bg-white shadow-lg transition-transform duration-300 ${
+                language === "en" ? "translate-x-1" : "translate-x-6"
+              }`}
+            />
           </button>
+          <span className={`text-xs font-medium ${language === "fr" ? "text-white" : "text-gray-500"}`}>FR</span>
         </div>
       </div>
       {navbarOpen ? <MenuOverlay links={navLinks} /> : null}

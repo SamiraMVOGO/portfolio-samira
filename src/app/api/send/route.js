@@ -15,10 +15,11 @@ export async function POST(req) {
 
  
   const mailOptions = {
-    from: process.env.EMAIL_USER, 
+    from: email, 
+    to: process.env.EMAIL_USER,
     subject: subject,
     text: message, 
-    html: `<p>${message}</p>`, 
+    html: `<p><strong>From:</strong> ${email}</p><p><strong>Message:</strong></p><p>${message}</p>`, 
   };
 
   try {
