@@ -1,10 +1,10 @@
 "use client";
 
-import React, { createContext, useContext, useState, useEffect } from "react";
+import React, { createContext, useContext, useState } from "react";
 import i18n from "i18next";
 import { initReactI18next, I18nextProvider } from "react-i18next";
 
-// Locale resources
+// Locale resources - expanded from existing i18n/locales files
 const resources = {
   en: {
     translation: {
@@ -68,7 +68,7 @@ const resources = {
   }
 };
 
-// Initialize i18next
+// Initialize i18next once on module load
 if (!i18n.isInitialized) {
   i18n.use(initReactI18next).init({
     resources,
@@ -85,17 +85,13 @@ const LanguageContext = createContext();
 
 // Fournisseur de contexte
 export const LanguageProvider = ({ children }) => {
-  const [language, setLanguage] = useState("en"); // Langue par défaut : anglais
+  const [language, setLanguage] = useState("en");
 
   const toggleLanguage = () => {
     const newLang = language === "en" ? "fr" : "en";
     setLanguage(newLang);
     i18n.changeLanguage(newLang);
   };
-
-  useEffect(() => {
-    i18n.changeLanguage(language);
-  }, [language]);
 
   return (
     <I18nextProvider i18n={i18n}>
